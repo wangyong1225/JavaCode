@@ -1,0 +1,7 @@
+二分查找的思路
+
+1.首先确定数组的中间坐标mid
+2.让目标findVal与arr[mid]比较
+  1.findVal<arr[mid] 向left到mid查找
+  2、findVal>arr[mid]向mid到right查找
+3、找到就返回
