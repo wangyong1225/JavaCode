@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 声明对象 注入：就是赋值的意思
+       简单类型：Spring中规定java中的基本数据类型和字符串都是简单数据类型
+       di: 给属性赋值
+       1、set注入：Spring调用类的set方法，
+         1）简单类型的set注入
+          <bean id="xx" class="yy">
+             <property name="属性名字" value="属性值" />
+             一个property只能给一个属性赋值
+             <property...
+         </bean>
+
+        2引用类型的set注入：Spring调用类的set方法
+         <bean id="xxx" class="yyy">
+            <property name="属性名称" ref="bean的id(对象的名称)"
+         </bean>
+
+
+      2、构造注入：Spring调用类有参构造方法，在创建对象的同时在构造方法中给属性赋值
+         构造注入使用<constructor-arg> 标签
+         <constructor-arg> 标签：一个<constructor-arg>表示构造方法一个参数。
+         <constructor-arg> 标签属性：
+            name：表示构造方法的形参名
+            index：表示构造方法的参数的位置，参数从左往右位置是0,1,2的顺序
+            value: 构造方法的形参类型是简单类型的，使用value
+            ref：构造方法的形参类型是引用类型的，适应ref
+
+
+    -->
+    <bean id="myStudent" class="com.wy.ba03.Student">
+        <constructor-arg name="name" value="张三"/>
+        <constructor-arg name="age" value="20"/>
+        <constructor-arg name="school" ref="mySchool"/>
+    </bean>
+
+    <bean id="mySchool" class="com.wy.ba03.School">
+        <property name="name" value="北京节点"/>
+        <property name="address" value="北京"/>
+    </bean>
+
+    <!-- 使用index -->
+    <bean id="myStudent2" class="com.wy.ba03.Student">
+        <constructor-arg index="0" value="李四"/>
+        <constructor-arg index="1" value="24"/>
+        <constructor-arg index="2" ref="mySchool2"/>
+    </bean>
+
+    <bean id="mySchool2" class="com.wy.ba03.School">
+        <property name="name" value="清华大学"/>
+        <property name="address" value="北京"/>
+    </bean>
+
+    <bean id="myFile" class="java.io.File">
+        <constructor-arg name="parent" value="D:\java\03-MyBatis\javaProject\ch01-hello-mybatis"/>
+        <constructor-arg name="child" value="readme.txt"/>
+    </bean>
+
+
+</beans>

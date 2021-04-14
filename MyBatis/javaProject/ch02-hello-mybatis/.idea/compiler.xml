@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ch04-dongtai-sql" />
+        <module name="ch03-hello-mybatis" />
+        <module name="ch02-hello-mybatis" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ch02-hello-mybatis" target="1.7" />
+      <module name="ch03-hello-mybatis" target="1.7" />
+      <module name="ch04-dongtai-sql" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

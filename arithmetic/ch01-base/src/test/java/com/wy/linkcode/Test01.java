@@ -8,10 +8,11 @@ import java.util.HashSet;
 
 public class Test01 {
     @Test
-    public void Test01(){
+    public void Test001(){
         Solution1 main = new Solution1();
 
-        double[] arr = {2,0,1,1,1,1,0,2};
-        System.out.println(main.IfIntersect(arr));
+        int[] A = {1,4,3,2,5};
+        int[] B = {1,2,3,4};
+        System.out.println(main.getMaxInnerProduct(A, B));
     }
 }

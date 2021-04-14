@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../GitHub/JavaCode/JavaCode/arithmetic/ch01-base/ch01-base (1).iml" filepath="$PROJECT_DIR$/../../../GitHub/JavaCode/JavaCode/arithmetic/ch01-base/ch01-base (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ch04-d1-anno/ch04-d1-anno.iml" filepath="$PROJECT_DIR$/../ch04-d1-anno/ch04-d1-anno.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ch06-aop-aspectj/ch06-aop-aspectj.iml" filepath="$PROJECT_DIR$/../ch06-aop-aspectj/ch06-aop-aspectj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ch07-spring-mybatis/ch07-spring-mybatis.iml" filepath="$PROJECT_DIR$/../ch07-spring-mybatis/ch07-spring-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ch08-first-service/ch08-first-service.iml" filepath="$PROJECT_DIR$/../ch08-first-service/ch08-first-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ch09-sale-anno/ch09-sale-anno.iml" filepath="$PROJECT_DIR$/../ch09-sale-anno/ch09-sale-anno.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ch10-sal-aspectj/ch10-sal-aspectj.iml" filepath="$PROJECT_DIR$/../ch10-sal-aspectj/ch10-sal-aspectj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ch11-spring-web/ch11-spring-web.iml" filepath="$PROJECT_DIR$/../ch11-spring-web/ch11-spring-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../project/cmr01/cmr01.iml" filepath="$PROJECT_DIR$/../../../project/cmr01/cmr01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../project/CRM/代码/workspaceForCrm/crm/crm.iml" filepath="$PROJECT_DIR$/../../../project/CRM/代码/workspaceForCrm/crm/crm.iml" />
+    </modules>
+  </component>
+</project>

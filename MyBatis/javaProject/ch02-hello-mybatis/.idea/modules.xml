@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ch02-hello-mybatis.iml" filepath="$PROJECT_DIR$/ch02-hello-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ch03-hello-mybatis/ch03-hello-mybatis.iml" filepath="$PROJECT_DIR$/../ch03-hello-mybatis/ch03-hello-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ch04-dongtai-sql/ch04-dongtai-sql.iml" filepath="$PROJECT_DIR$/../ch04-dongtai-sql/ch04-dongtai-sql.iml" />
+    </modules>
+  </component>
+</project>

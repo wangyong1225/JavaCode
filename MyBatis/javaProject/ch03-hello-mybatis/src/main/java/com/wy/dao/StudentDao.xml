@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wy.dao.StudentDao">
+    <!--
+     parameterType : dao接口中方法参数的数据类型。
+      parameterType它的值是java中的数据类型全限定名称或者mybatis定义的别名
+      例如：parameType="java.lang.Integer"
+           parameType="int"
+
+     注意：parameType不是强制的，mybatis通过反射机制能够发现接口的参数的数据结构
+     所以可以没有，一般不写
+
+     1、mybatis创建Connection， PrepareStatement对象
+        String sql = "select id, name , email, age from student where id=?";
+        PrepareStatement pst = conn.preparedStatement(sql);
+        pst.setInt(1,1001);
+
+     2.执行sql封装resultType="com.wy.domain.Student"这个对象
+     ResultSet rs = ps.executeQuery();
+     while(rs.next()){
+        // 从数据库取表的一行数据，存到一个java对象属性当中
+        Student student = new Student();
+        student.setId(rs.getInt("id"));
+        student.setName(rs.getString("name"));
+        student.setEmail(rs.getString("email"));
+        student.setAge(rs.getInt("age"));
+     }
+     return student;
+
+
+
+    -->
+
+    <select id="selectStudentById" parameterType="int" resultType="stu">
+         select id, name , email, age from student where id=${id}
+    </select>
+
+    <select id="selectMultiParam" resultType="com.wy.domain.Student">
+        select id, name , email, age from student where name=#{myname} or age=#{myage}
+    </select>
+
+    <!-- 多个参数，使用java对象的属性值，作为参数实际值
+     使用对象语法：#{属性名，JavaType=类型名称.jdbcType=数据类型}很少用
+     javaType:值java中的属性数据类型。
+     jdbcType:值数据库中的数据类型
+     例如：#{paramName, javaType=java.lang.String, jdbcType=VARCHAR}
+
+     我们使用的是简化方式：#{属性名}
+     -->
+    <select id="selectMultiMyParam" resultType="com.wy.domain.Student">
+        select id, name , email, age from student where name=#{paramName} or age=#{paramAge}
+    </select>
+
+    <select id="selectMultiStudent" resultType="com.wy.domain.Student">
+        select id, name , email, age from student where name=#{name} or id=#{id}
+    </select>
+
+    <select id="countStudent" resultType="int">
+        select count(*) from student;
+    </select>
+        <!-- 返回Map
+      1) 列名是map的key，列值是map的value
+      2) 返回map的时候最多返回一行，多行是报错的
+         -->
+    <select id="selectMaoBiId" resultType="java.util.HashMap">
+        select * from student where id=#{id};
+    </select>
+
+
+    <!--
+          1）先定义resultMap
+          2）再使用
+
+          id：自定义名称，表示你定义的这个resultMap
+          type：java类型的限定名称
+
+          -->
+    <resultMap id="studentMap" type="com.wy.domain.Student">
+        <!-- column:列名  property:java类型的属性名  id:主键  result:非主键 -->
+        <id column="id" property="id" />
+
+        <result column="name" property="name" />
+        <result column="email" property="email"/>
+        <result column="age" property="age"/>
+
+    </resultMap>
+    <select id="selectResultMapById" resultMap="studentMap">
+        select * from student
+    </select>
+
+    <resultMap id="myStudentMap" type="com.wy.domain.MyStudent">
+        <!-- column:列名  property:java类型的属性名  id:主键  result:非主键 -->
+        <id column="id" property="myId" />
+        <result column="name" property="myName" />
+        <result column="email" property="myEmail"/>
+        <result column="age" property="myAge"/>
+
+    </resultMap>
+
+    <select id="selectMyStudent" resultMap="myStudentMap">
+        select * from student;
+    </select>
+
+    <!-- 当列名和属性名不一样，可以使用resultMap方式
+         resultType的原则，是同名的列名对应相同的属性名
+         使用列别名的的方式来解决列名和属性名不一样的问题
+     -->
+    <select id="selectDiffStudent" resultType="com.wy.domain.MyStudent">
+        select id as myId, name as myName, email as myEmail, age as myAge
+        from student
+    </select>
+
+    <!-- 模糊查询 -->
+    <select id="selectLike" resultType="com.wy.domain.Student">
+        select * from student where name like "%" #{name} "%"
+    </select>
+
+
+
+
+    <update id="updateStudent" >
+        update student set age=#{myage} where id=#{myid}
+    </update>
+
+
+</mapper>

@@ -451,6 +451,54 @@ public class Solution1 {
         }
     }
 
+    /**25 打印X
+     *
+     * @param n: An integer.
+     * @return: A string list.
+     */
+    public List<String> printX(int n) {
+        // write your code here.
+        StringBuilder temp; // 存放每一行打印信息
+        List<String> res = new ArrayList<>();
+        for(int i = 0; i < n; i++){
+            temp = new StringBuilder();
+            for(int j = 0; j < n; j++){
+                if(i == j || j == n - 1 - i){
+                    temp.append("X");
+                }else {
+                    temp.append(" ");
+                }
+            }
+            res.add(temp.toString());
+        }
+        return res;
+    }
+
+    /**26 内积
+     * @param A: the A array
+     * @param B: the B array
+     * @return: return the maxium inner product of B and C
+     */
+    public long getMaxInnerProduct(int[] A, int[] B) {
+        // write your code here
+        int k = B.length;
+        return f(A, B, 0, A.length-1, 0, k);
+    }
+    public long f(int[] A, int[] B, int l, int r, int order, int k){
+        long lMax = 0, rMax = 0;
+        if(order == k - 1){
+            lMax = A[l] * B[order];
+            rMax = A[r] * B[order];
+        }else {
+            lMax = A[l] * B[order] + f(A, B, l+1, r, order+1, k);
+            rMax = A[r] * B[order] + f(A, B, l, r-1, order+1, k);
+        }
+        return Math.max(lMax, rMax);
+    }
+
+
+
+
     /**37 反转一个三位数
      *
      */

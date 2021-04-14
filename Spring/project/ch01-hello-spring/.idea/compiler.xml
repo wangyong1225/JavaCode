@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ch10-sal-aspectj" />
+        <module name="crm" />
+        <module name="ch07-spring-mybatis" />
+        <module name="ch01-base (1)" />
+        <module name="cmr01" />
+        <module name="ch09-sale-anno" />
+        <module name="ch08-first-service" />
+        <module name="ch06-aop-aspectj" />
+        <module name="ch11-spring-web" />
+        <module name="ch04-d1-anno" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ch01-base" target="1.8" />
+      <module name="ch01-base (1)" target="1.8" />
+      <module name="ch01-CMT" target="11" />
+      <module name="ch01-hello-mybatis" target="8" />
+      <module name="ch01-hello-spring" target="1.8" />
+      <module name="ch04-d1-anno" target="1.8" />
+      <module name="ch06-aop-aspectj" target="1.8" />
+      <module name="ch07-spring-mybatis" target="1.8" />
+      <module name="ch08-first-service" target="1.8" />
+      <module name="ch09-sale-anno" target="1.8" />
+      <module name="ch10-sal-aspectj" target="1.8" />
+      <module name="ch11-spring-web" target="1.8" />
+      <module name="cmr01" target="1.7" />
+      <module name="crm" target="1.8" />
+      <module name="myPlan" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

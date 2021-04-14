@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wy.dao.StudyDao">
+    <insert id="insertStudy" >
+        insert into t_time values(#{id},#{date},#{time})
+
+    </insert>
+
+    <select id="queryStudy" resultType="com.wy.domain.Study">
+        select * from t_time order by id desc
+    </select>
+
+    <update id="updateStudy">
+        update t_time set time = #{time} where id = #{id}
+    </update>
+</mapper>
