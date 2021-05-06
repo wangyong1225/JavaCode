@@ -12,8 +12,6 @@ public class Sort {
 
        sort.heapSort(arr);
        System.out.println(Arrays.toString(arr));
-
-
     }
 
     /**
@@ -58,9 +56,7 @@ public class Sort {
         }
         // 当for循环结束后，我们已经将以i为父节点的数的最大值，放在了最顶上
         arr[i] = temp;
-
     }
-
 
     /**
      * 桶排序
